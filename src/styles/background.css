@@ -1,0 +1,86 @@
+/* ==========================================================================
+   REACTBITS INSPIRED SACRED BACKGROUND: LUZ DE CIRIO & PENUMBRA ECLESIAL
+   ========================================================================== */
+.sacred-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Aura cálida de cirio central */
+.bg-candle-glow-1 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 750px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.14) 0%, rgba(200, 125, 37, 0.07) 45%, transparent 75%);
+  filter: blur(100px);
+  border-radius: 50%;
+  animation: candleFlicker 10s ease-in-out infinite alternate;
+}
+
+.bg-candle-glow-2 {
+  position: absolute;
+  top: 45%;
+  right: 8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 90, 50, 0.1) 0%, rgba(212, 175, 55, 0.04) 50%, transparent 70%);
+  filter: blur(110px);
+  border-radius: 50%;
+  animation: candleFlicker 14s ease-in-out infinite alternate-reverse;
+}
+
+.bg-candle-glow-3 {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 650px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.09) 0%, transparent 65%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+/* Textura sutil de pergamino sacral */
+.bg-parchment-texture {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 25%, transparent 0%, rgba(19, 16, 11, 0.85) 90%),
+    linear-gradient(rgba(212, 175, 55, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+  opacity: 0.9;
+}
+
+/* Chispas doradas flotantes (luz de vigilia) */
+.candle-sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(244, 226, 166, 0.65);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.75);
+  pointer-events: none;
+}
+
+@keyframes candleFlicker {
+  0% {
+    opacity: 0.7;
+    transform: translate(-50%, 0) scale(0.96);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, 15px) scale(1.04);
+  }
+  100% {
+    opacity: 0.75;
+    transform: translate(-49%, -10px) scale(0.98);
+  }
+}

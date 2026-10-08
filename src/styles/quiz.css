@@ -1,0 +1,253 @@
+/* ==========================================================================
+   QUIZ LITÚRGICO & CELEBRACIÓN DE LA GRACIA
+   ========================================================================== */
+.quiz-section {
+  position: relative;
+  padding: 120px 0 150px 0;
+  background: var(--color-bg-base);
+  overflow: hidden;
+}
+
+.quiz-container-box {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--color-bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-sacred);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-elevation);
+  position: relative;
+}
+
+.quiz-container-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-primary), transparent);
+}
+
+.quiz-progress-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: rgba(212, 175, 55, 0.12);
+  border-radius: var(--radius-pill);
+  margin-bottom: 2.2rem;
+  overflow: hidden;
+}
+
+.quiz-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #B38F26, #F4E2A6);
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
+}
+
+.quiz-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-counter {
+  font-family: var(--font-heading-cinzel);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+}
+
+.quiz-question-title {
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  line-height: 1.5;
+  margin-bottom: 2.2rem;
+  color: var(--color-text-title);
+  font-family: var(--font-heading-cinzel);
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-bottom: 2.2rem;
+}
+
+.quiz-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  width: 100%;
+  padding: 1.35rem 1.6rem;
+  text-align: left;
+  border-radius: var(--radius-subtle);
+  background: rgba(37, 30, 20, 0.55);
+  border: 1px solid var(--color-border-sacred);
+  color: var(--color-text-body);
+  font-family: var(--font-serif-sacred);
+  font-size: 1.18rem;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: all var(--transition-gentle);
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--color-gold-primary);
+  transform: translateX(4px);
+  color: var(--color-text-title);
+}
+
+.quiz-option-btn.selected {
+  border-color: var(--color-gold-light);
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--color-text-title);
+}
+
+.quiz-option-btn.correct {
+  border-color: #059669;
+  background: rgba(16, 185, 129, 0.14);
+  color: #ECFDF5;
+}
+
+.quiz-option-btn.wrong {
+  border-color: #B91C1C;
+  background: rgba(220, 38, 38, 0.14);
+  color: #FEF2F2;
+}
+
+.option-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading-cinzel);
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-border-sacred);
+  flex-shrink: 0;
+}
+
+.quiz-feedback-box {
+  padding: 1.25rem 1.6rem;
+  border-radius: var(--radius-subtle);
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid var(--color-gold-primary);
+  font-size: 1.15rem;
+  margin-bottom: 2.2rem;
+  color: var(--color-gold-light);
+  font-style: italic;
+}
+
+/* PANTALLA DE RESULTADOS Y GRACIA */
+.results-card {
+  text-align: center;
+}
+
+.celebration-icon-wrapper {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E5C358 0%, #C59B27 60%, #9E7412 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.8rem auto;
+  color: #1A1305;
+  box-shadow: 0 0 45px rgba(212, 175, 55, 0.4);
+}
+
+.score-badge {
+  display: inline-block;
+  font-family: var(--font-heading-cinzel);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-light);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.5rem 1.8rem;
+  border-radius: var(--radius-subtle);
+  border: 1px solid var(--color-border-sacred);
+  margin-bottom: 2.2rem;
+}
+
+.grace-message-box {
+  background: rgba(25, 20, 14, 0.95);
+  border: 1px solid var(--color-border-sacred);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2.2rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  box-shadow: var(--shadow-candle);
+}
+
+.grace-message-box p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-body);
+}
+
+.grace-message-box strong {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+.grace-quote-highlight {
+  font-style: italic;
+  color: var(--color-gold-primary);
+  font-size: 1.25rem;
+  display: block;
+  margin-top: 1.4rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(212, 175, 55, 0.25);
+  text-align: center;
+  font-family: var(--font-serif-sacred);
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0D0A07;
+  border-top: 1px solid var(--color-border-sacred);
+  padding: 4.5rem 1.5rem 3rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.footer-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  color: var(--color-gold-light);
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.footer-subtitle {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.footer-divider {
+  width: 70px;
+  height: 1px;
+  background: var(--color-gold-primary);
+  margin: 1.75rem auto;
+}
+
+.footer-credits {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,205 @@
+/* ==========================================================================
+   PALETA SAGRADA / ECLESIAL CÁLIDA
+   Inspiración: Pergamino sagrado, oro viejo eclesiástico, marfil cálido,
+   madera noble, tipografía serifa renacentista/clásica.
+   ========================================================================== */
+:root {
+  /* Fondos cálidos inspirados en abadías, pergaminos y sacristías */
+  --color-bg-base: #ebdec9;          /* Carbón oscuro con matiz sepia cálido */
+  --color-bg-surface: #1C1710;       /* Nogal oscuro / ébano eclesial */
+  --color-bg-card: rgba(29, 23, 16, 0.92);
+  --color-bg-parchment: #251E14;     /* Pergamino antiguo nocturno */
+  --color-bg-subtle: rgba(212, 175, 55, 0.05);
+
+  /* Acentos de Oro Litúrgico & Ámbar Sacro */
+  --color-gold-light: #F4E2A6;       /* Oro brillante marfil */
+  --color-gold-primary: #D4AF37;     /* Oro litúrgico clásico */
+  --color-gold-deep: #B38F26;        /* Oro viejo envejecido */
+  --color-amber-warm: #C87D25;       /* Ámbar cirio cálido */
+  --color-terracotta: #A85A32;       /* Tierra sagrada / arcilla */
+
+  /* Textos nobles y legibles */
+  --color-text-title: #FAF6ED;       /* Blanco marfil pergamino */
+  --color-text-body: #E8DEC8;        /* Crema suave muy legible */
+  --color-text-muted: #A39682;       /* Ceniza litúrgica cálida */
+  --color-text-gold: #DFC27D;        /* Ocre sagrado */
+
+  /* Bordes de filigrana sacra */
+  --color-border-sacred: rgba(212, 175, 55, 0.22);
+  --color-border-glow: rgba(244, 226, 166, 0.45);
+
+  /* Tipografías eclesiásticas / humanísticas */
+  --font-serif-sacred: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-heading-cinzel: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Sombras cálidas (luz de cirio) */
+  --shadow-candle: 0 10px 35px -10px rgba(212, 175, 55, 0.15);
+  --shadow-elevation: 0 20px 45px -15px rgba(0, 0, 0, 0.75);
+
+  --radius-subtle: 996px;
+  --radius-card: 12px;
+  --radius-pill: 9999px;
+
+  --transition-gentle: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-serif-sacred);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-body);
+  line-height: 1.8;
+  font-size: 1.18rem;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar con tono oro viejo */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #382D1D;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-deep);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Tipografía y Encabezados */
+h1, h2, h3, h4, .font-cinzel {
+  font-family: var(--font-heading-cinzel);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--color-text-title);
+}
+
+p {
+  font-family: var(--font-serif-sacred);
+  font-size: 1.22rem;
+  line-height: 1.85;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF6DD 0%, #D4AF37 55%, #B38F26 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2rem 0;
+  color: var(--color-gold-primary);
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  height: 1px;
+  width: 90px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-primary), transparent);
+}
+
+/* Botones Solemnes */
+.btn-sacred-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #E5C358 0%, #C59B27 60%, #9E7412 100%);
+  color: #1A1305;
+  font-family: var(--font-heading-cinzel);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius-subtle);
+  border: 1px solid rgba(255, 245, 205, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+ 
+  transition: all var(--transition-gentle);
+}
+
+
+
+.btn-sacred-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: rgba(37, 30, 20, 0.65);
+  color: var(--color-text-title);
+  font-family: var(--font-heading-cinzel);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.95rem 2.1rem;
+  border-radius: var(--radius-subtle);
+  border: 1px solid var(--color-border-sacred);
+  cursor: pointer;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-gentle);
+}
+
+.btn-sacred-secondary:hover {
+  border-color: var(--color-gold-light);
+  background: rgba(48, 38, 25, 0.85);
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+/* Insignia / Badge Sacra */
+.badge-sacred {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1.25rem;
+  font-family: var(--font-heading-cinzel);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-gold-light);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  margin-bottom: 1.25rem;
+}
